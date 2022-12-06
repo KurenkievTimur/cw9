@@ -46,10 +46,11 @@ CREATE TABLE IF NOT EXISTS "task"
 
 CREATE TABLE IF NOT EXISTS "work_log"
 (
-    id         BIGSERIAL PRIMARY KEY         NOT NULL,
-    created_at TIMESTAMP DEFAULT now()       NOT NULL,
-    time       VARCHAR(6)                    NOT NULL,
-    task_id    BIGINT REFERENCES "task" (id) NOT NULL
+    id          BIGSERIAL PRIMARY KEY         NOT NULL,
+    created_at  TIMESTAMP DEFAULT now()       NOT NULL,
+    time        VARCHAR(6)                    NOT NULL,
+    description VARCHAR(50)                   NOT NULL,
+    task_id     BIGINT REFERENCES "task" (id) NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS "attachment"
